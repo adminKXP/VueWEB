@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="download/font_1036508_uwqevl5qtc/iconfont.css">
+    <style>
+        .box{
+            width:500px;
+            height:440px;
+            margin:0px auto;
+        }
+        header{
+            width:1349px;
+            height: 40px;
+            margin:0px auto;
+            background-color: #333;
+            color:#b0b0b0;
+        }
+        .content{
+            width:1226px;
+            height: 40px;
+            margin:0px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #lcont,#rcont{
+            padding-left: 0px;
+            height: 40px;
+            line-height: 40px;
+            display: flex;
+            font-size: 12px;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+        #lcont{
+            width:60%;
+
+        }
+        #rcont{
+            width:20%;
+            position: relative;
+            
+        }
+        #lcont li{
+            cursor: pointer;
+        }
+        #rcont li{
+            cursor: pointer;
+         
+        }
+        /* #rcont li:nth-last-of-type(1){
+            width:80px;
+            height: 40px;
+            text-align: center;
+        } */
+        #rcont li:nth-last-of-type(1):hover{
+            background-color: white;
+            color:#ff6700;
+        }
+        #lcont li:hover{
+            color:white;
+        }
+        #rcont li:hover{
+            color:white;
+        }
+        /* #sdata{
+            width:80px;
+            height: 40px;
+            position: absolute;
+            right:0px;
+            top:0px;
+            opacity: 0;
+        } */
+        #sbox{
+            width:316px;
+            height: 98px;
+            line-height: 98px;
+            text-align: center;
+            z-index: 300;
+            /* background-color: white; */
+            /* color:#333; */
+            position: absolute;
+            /* border: 1px solid black; */
+            right:0px;
+            top:40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            /* padding: 15px 0 0; */
+            color: #424242;
+            background: #fff;
+        }
+        #site-header{
+            width:1349px;
+            height: 100px;
+            margin:0px auto;
+            /* border:1px solid black; */
+        }
+        #site-content{
+            width:1226px;
+            height: 100px;
+            margin:0px auto;
+            border:1px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+        #content-left{
+            width:850px;
+            border:1px solid black;
+          
+            
+        }
+        #content-left-ul{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-left: 200px;
+        }
+        .list{
+            list-style: none;
+            
+        }
+        .bg{
+            visibility: hidden;
+        }
+        .listli{
+            list-style: none;
+        }
+        .list:hover{
+            color:#ff6700;
+        }
+        #content-right{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width:296px;
+            border:1px solid #e0e0e0;
+            position: relative;
+
+        }
+        #content-right:hover{
+            border: 1px solid #b0b0b0;
+        }
+        #search-sear{
+            width:245px;
+            height: 50px;
+            border-right: 1px solid #e0e0e0;
+            
+        }
+        #search-sear:hover{
+            border-right: 1px solid #b0b0b0;
+        }
+        #putext{
+            width:240px;
+            margin:0px auto;
+            height: 45px;
+            display: block;
+            border:0px solid black;
+            
+
+        }
+        #modelList{
+            width:244px;
+            position: absolute;
+            left:-1px;
+            top:50px;
+            border:1px solid black;
+            display: none;
+            font-size: 10px;
+        }
+        .modelList{
+            width:100%;
+            padding:5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 10px;
+        }
+        .list1{
+            display: inline-block;
+            width:50%;
+            text-align: left;
+        }
+        .list2{
+            display: inline-block;
+            width:50%;
+            padding-right: 5%;
+            text-align: right;
+        }
+       #search-text{
+        width:52px;
+            height: 50px;
+            border:none;
+            position: relative;
+       }
+       #imgs{
+        width:100%;text-align:center;line-height: 50px;position:absolute;left:0;top:0;
+       }
+       #modelbox{
+           width:100%;
+           height: 200px;
+           position: absolute;
+           left: 0px;
+           z-index: 500;
+           display: none;
+           top:150px;
+           margin:0px auto;
+           border:1px solid blue;
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+       }
+       .ullist{
+           width:200px;
+           height: 100%;
+           
+           border:1px solid red;
+       }
+
+   
+       .ullistimg{
+           width:100%;
+           text-align: center;
+           margin: 0px auto;
+        
+       }
+       .ullistp,.ullistprice,.ullisttitle{
+           width:100%;
+           /* height: 10px; */
+            text-align: center;
+            margin:0px;
+            font-size: 10px;
+            /* line-height: 10px; */
+
+       }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <ul id="lcont"></ul>
+            <ul id="rcont">
+                <li class="list">
+                    <a>登陆</a>
+                </li>
+                <li class="list">
+                    <a>注册</a>
+                </li>
+                <li class="list">
+                    <a>消息通知</a>
+                </li>
+            
+                <li class="list" style="display:flex;justify-content:space-around;width:120px;" id="sdata">
+                    <img style="width:20px;" src="cat.png" alt="">
+                    <a>购物车</a>
+                </li>
+               
+             
+               
+            </ul>
+
+        </div>
+    </header>
+    <div id="site-header">
+        <div id="site-content">
+            <div>
+                <img src="https://s01.mifile.cn/i/logo.png" alt="">
+                <img src="" alt="">
+            </div>
+            <div id="content-left">
+                <ul id="content-left-ul"></ul>
+            </div>
+            <div id="content-right">
+                <div id="search-sear">
+                    <input type="text" id="putext">
+                    <div id="modelList">
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        <div class="modelList">
+                            <span class="list1">小米6X</span><span class="list2">约有6件</span> 
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                <div id="search-text">
+                    <!-- <img src="search.png" alt="" id = "imgs"style=""> -->
+                    <i class="iconfont icon-sousuo" id = "imgs"></i>
+                </div>
+            </div>
+        </div>
+        <div id="modelbox">
+         
+        </div>
+    </div>
+ 
+</body>
+
+</html>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    var arrs1 = ["小米商城","MUL","loT","云服务","金融","有品","小爱开放平台","郑企服务","资质证照","协议规则","下载app","Select Region"]
+    // 数组1导航
+    for(var i = 0;i<arrs1.length;i++){
+        $("<li></li>").appendTo($("#lcont")).text(arrs1[i])
+    }
+    $("<div id='sbox'></div>")
+    .appendTo($("#sdata"))
+    .animate({
+            height:"0px"
+        },100,'linear')   
+    $("#sdata").on("mouseenter", function(){
+        $("#sbox")
+        .text("购物车中还没有商品，赶紧选购吧！")
+        .animate({
+            height:"98px"
+        },100,'linear')   
+    })
+    $("#sdata").on("mouseleave", function(){
+        $("#sbox")
+        .text("")
+        .animate({
+            height:"0px"
+        },100,'linear')
+    })
+    // ===============================================================================================
+
+    var navArr1 = ["小米手机","红米","电视","笔记本","家电","新品","路由器","智能硬件","服务","社区"]
+    for(var i = 0;i<navArr1.length;i++){
+        $("<li class='listli'></li>").appendTo($("#content-left-ul")).text(navArr1[i])
+    }
+    $("#putext").on("focus",function(){
+        $("#content-right")[0].style.borderColor="red"
+        $("#search-sear")[0].style.borderColor="red"
+        $("#putext")[0].style.border="0px solid red"
+        $("#modelList")[0].style.borderColor="red"
+        $("#modelList").show()
+        console.log( $("#modelList")[0])
+    })
+    $("#putext").on("blur",function(){
+       
+        $("#content-right")[0].style.borderColor="#e0e0e0"
+        $("#search-sear")[0].style.borderColor="#e0e0e0"
+        $("#putext")[0].style.border="0px solid #e0e0e0"
+        $("#modelList")[0].style.borderColor="#e0e0e0"
+        $("#modelList").hide()
+       
+    })
+    $("#search-text").on("mouseenter", function(){
+        $("#search-text")[0].style.backgroundColor="#ff6700"
+     
+    })
+    $("#search-text").on("mouseleave", function(){
+        $("#search-text")[0].style.backgroundColor="#ffffff"
+       
+    })
+    var  arrsT = [
+        {name:"新品",imgL:'imgs/1.jpg',price:"3221起",prod:"小米MIX 1"},
+        {name:"",imgL:'imgs/2.png',price:"3222起",prod:"小米MIX 2"},
+        {name:"",imgL:'imgs/3.png',price:"3223起",prod:"小米MIX 3"},
+        {name:"新品",imgL:'imgs/4.png',price:"3224起",prod:"小米MIX 4"},
+        {name:"",imgL:'imgs/5.png',price:"3225起",prod:"小米MIX 5"},
+    ]
+    var  arrsT2 = [
+        {name:"新品",imgL:'imgs/1.jpg',price:"4221起",prod:"小米MIX 1"},
+        {name:"",imgL:'imgs/2.png',price:"4222起",prod:"小米MIX 2"},
+        {name:"",imgL:'imgs/3.png',price:"4223起",prod:"小米MIX 3"},
+        {name:"新品",imgL:'imgs/4.png',price:"4224起",prod:"小米MIX 4"},
+        {name:"",imgL:'imgs/5.png',price:"4225起",prod:"小米MIX 5"},
+    ]
+    var  arrsT3 = [
+        {name:"新品",imgL:'imgs/1.jpg',price:"4221起",prod:"电视 1"},
+        {name:"",imgL:'imgs/2.png',price:"4222起",prod:"电视 2"},
+        {name:"",imgL:'imgs/3.png',price:"4223起",prod:"电视 3"},
+        {name:"新品",imgL:'imgs/4.png',price:"4224起",prod:"电视 4"},
+        {name:"",imgL:'imgs/5.png',price:"4225起",prod:"电视 5"},
+    ]
+    var  arrsT4 = [
+        {name:"新品",imgL:'imgs/1.jpg',price:"4221起",prod:"笔记本 1"},
+        {name:"",imgL:'imgs/2.png',price:"4222起",prod:"笔记本 2"},
+        {name:"",imgL:'imgs/3.png',price:"4223起",prod:"笔记本 3"},
+        {name:"新品",imgL:'imgs/4.png',price:"4224起",prod:"笔记本 4"},
+        {name:"",imgL:'imgs/5.png',price:"4225起",prod:"笔记本 5"},
+    ]
+    
+    for(var i = 0;i<arrsT.length;i++){
+        // 框框
+        $("<div class='ullist' ></div>").appendTo($("#modelbox"))
+ 
+    }
+    $("<p class='ullisttitle'></p>")
+    .appendTo($(".ullist"))
+    $("<img class='ullistimg'/>")
+    .appendTo($(".ullist"))
+    $("<p class='ullistp'></p>")
+    .appendTo($(".ullist"))
+    $("<p class='ullistprice'></p>")
+    .appendTo($(".ullist"))
+
+    $(".listli").on("mouseenter",function(){
+        console.log($(".listli").eq())
+       
+       $("#modelbox").slideDown() 
+
+       if($(".listli").index(this)==0){
+        $(".listli")[0].style.color="#ff6700"
+        for(var i = 0;i<arrsT.length;i++){
+            $(".ullisttitle").eq(i).text(arrsT[i].name)
+            if(arrsT[i].name==""){
+                $(".ullisttitle").eq(i).text("vvv ")
+                $(".ullisttitle").eq(i).addClass("bg")
+            }
+            $(".ullistimg").eq(i).attr("src",arrsT[i].imgL)
+            $(".ullistp").eq(i).text(arrsT[i].prod)
+            $(".ullistprice").eq(i).text(arrsT[i].price)
+            
+        }
+       }
+       
+       else if($(".listli").index(this)==1){
+        $(".listli")[0].style.color="black"
+        $(".listli")[1].style.color="#ff6700"
+        for(var i = 0;i<arrsT2.length;i++){
+            $(".ullisttitle").eq(i).text(arrsT2[i].name)
+            if(arrsT2[i].name==""){
+                $(".ullisttitle").eq(i).text("vvv ")
+                $(".ullisttitle").eq(i).addClass("bg")
+            }
+            $(".ullistimg").eq(i).attr("src",arrsT2[i].imgL)
+            $(".ullistp").eq(i).text(arrsT2[i].prod)
+            $(".ullistprice").eq(i).text(arrsT2[i].price)
+            
+        }
+       }
+       else if($(".listli").index(this)==2){
+        $(".listli")[1].style.color="black"
+        $(".listli")[2].style.color="#ff6700"
+        for(var i = 0;i<arrsT3.length;i++){
+            $(".ullisttitle").eq(i).text(arrsT3[i].name)
+            if(arrsT3[i].name==""){
+                $(".ullisttitle").eq(i).text("vvv ")
+                $(".ullisttitle").eq(i).addClass("bg")
+            }
+            $(".ullistimg").eq(i).attr("src",arrsT3[i].imgL)
+            $(".ullistp").eq(i).text(arrsT3[i].prod)
+            $(".ullistprice").eq(i).text(arrsT3[i].price)
+            
+        }
+       }
+       else if($(".listli").index(this)==3){
+        $(".listli")[2].style.color="black"
+        $(".listli")[3].style.color="#ff6700"
+        for(var i = 0;i<arrsT4.length;i++){
+            $(".ullisttitle").eq(i).text(arrsT4[i].name)
+            if(arrsT4[i].name==""){
+                $(".ullisttitle").eq(i).text("vvv ")
+                $(".ullisttitle").eq(i).addClass("bg")
+            }
+            $(".ullistimg").eq(i).attr("src",arrsT4[i].imgL)
+            $(".ullistp").eq(i).text(arrsT4[i].prod)
+            $(".ullistprice").eq(i).text(arrsT4[i].price)
+            
+        }
+       }
+        
+   
+  
+       
+    })
+    $(".listli").on("mouseleave",function(){
+       $("#modelbox").slideUp() 
+
+    
+    })
+
+   
+    
+  
+
+ 
+
+   
+    
+
+
+ 
+</script>
